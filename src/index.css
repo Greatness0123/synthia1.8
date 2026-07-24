@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0A0A14;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-glass-bg backdrop-blur-[24px] border border-glass-border 
+           rounded-xl shadow-glass;
+  }
+
+  .glass-button {
+    @apply px-3 py-1.5 rounded-lg bg-glass-light border border-glass-border
+           text-sm text-gray-200 hover:bg-white/10 hover:text-white 
+           transition-all duration-150 active:scale-95;
+  }
+
+  .pill-metric {
+    @apply px-2 py-0.5 rounded-full bg-glass-light text-xs font-mono text-gray-300;
+  }
+
+  .panel-header {
+    @apply text-xs font-semibold uppercase tracking-widest text-gray-400;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
+  }
+
+  .drag-none {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+}
